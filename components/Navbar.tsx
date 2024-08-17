@@ -63,7 +63,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Navbar() {
     return (
-        <div className="flex justify-around items-center py-4 ">
+        <div className="flex justify-around items-center py-2 bg-transparent ">
             <div>
                 <Image
                 src="/logo.png"
@@ -133,16 +133,20 @@ export function Navbar() {
       </NavigationMenuList>
     </NavigationMenu> */}
                 <NavigationMenu>
+                
                     <HoverCard>
+                        
                         <HoverCardTrigger>
                             <GhostButton>
                                 Product
                             </GhostButton>
                         </HoverCardTrigger>
+                        
                         <HoverCardContent>
 
                         </HoverCardContent>
                     </HoverCard>
+                    
                     <HoverCard>
                         <HoverCardTrigger>
                             <GhostButton>
@@ -153,6 +157,7 @@ export function Navbar() {
 
                         </HoverCardContent>
                     </HoverCard>
+                    
                     <HoverCard>
                         <HoverCardTrigger>
                             <GhostButton>
@@ -163,6 +168,7 @@ export function Navbar() {
 
                         </HoverCardContent>
                     </HoverCard>
+                    
                     <HoverCard>
                         <HoverCardTrigger>
                             <GhostButton>
@@ -173,6 +179,7 @@ export function Navbar() {
 
                         </HoverCardContent>
                     </HoverCard>
+                    
                     <HoverCard>
                         <HoverCardTrigger>
                             <GhostButton>
@@ -183,6 +190,7 @@ export function Navbar() {
 
                         </HoverCardContent>
                     </HoverCard>
+                    
                     <HoverCard>
                         <HoverCardTrigger>
                             <GhostButton>
@@ -193,6 +201,7 @@ export function Navbar() {
 
                         </HoverCardContent>
                     </HoverCard>
+                    
                     <HoverCard>
                         <HoverCardTrigger>
                             <GhostButton>
@@ -205,7 +214,6 @@ export function Navbar() {
                     </HoverCard>
                     
                 </NavigationMenu>
-                
             </div>
             <div className="flex gap-2">
                 <Button variant="outline" size="sm">Login</Button>

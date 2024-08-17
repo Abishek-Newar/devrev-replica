@@ -1,3 +1,5 @@
+import { TitleText } from "./Hero"
+import { Button } from "./ui/button"
 import StickyText from "./ui/StickyText"
 
 
@@ -36,8 +38,37 @@ const Features = () => {
             ))
         }
     </div>
-    <div>
-        <video src=""></video>
+    <div className="h-[45vh] bg-black flex justify-center">
+            <div className="flex flex-col items-center gap-1 pt-10">
+            <h1 className="text-white">Get started for free</h1>
+            <h1 className="text-textclr">No credit card required</h1>
+            <Button variant="custom" size="sm"><p>Sign up</p></Button>
+            </div>
+    </div>
+    <div className="h-[45vh] lg:px-[15%] border-t flex border-b bg-black">
+        <div className="bg-black w-full h-full border lg:border-0 p-24" >
+            <div>
+                <div>
+                    <TitleText>LIMITED OFFER</TitleText>
+                    <div >
+                        <h1 className="text-white">Start-ups go free</h1>
+                        <h1 className="text-textclr">Powering the next generation of digital products</h1>
+                    </div>
+                    <Button className="text-white decoration-textclr hover:decoration-white" variant="link" size="sm">Apply now</Button>
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <div className="bg-black w-full h-full border lg:border-0 p-24">
+        <div>
+                    <TitleText>CAREERS</TitleText>
+                    <div >
+                        <h1 className="text-white">Join the mission</h1>
+                        <h1 className="text-textclr">Create he future of software development together</h1>
+                    </div>
+                    <Button className="text-white decoration-textclr hover:decoration-white" variant="link" size="sm">Apply now</Button>
+                </div>
+        </div>
     </div>
     </div>
   )

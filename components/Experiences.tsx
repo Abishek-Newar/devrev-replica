@@ -56,7 +56,7 @@ const Experiences = () => {
         <div className='flex flex-wrap'>
             {
                 experienceBox.map((item,index) =>(
-                    <div className={`w-[300px] gap-4 mt-3  h-[22vh] ${index !== 0 ? " border-l-2": null}`}>
+                    <div className={`w-[300px] gap-4 mt-3  h-[32vh] ${index !== 0 ? " border-l-2": null}`}>
                         <ExperienceBox topic={item.topic} percentage={item.percentage} />
                     </div>
                 ))

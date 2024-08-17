@@ -51,7 +51,7 @@ const Hero = () => {
 }
 
 export const TitleText = ({children}: {children: string}) =>{
-    return <div className="font-roboto text-[9px] bg-[#D8D8D8] text-[#242424] rounded-sm py-1 px-2 ">{children}</div>
+    return <div className="font-roboto inline text-[9px] bg-[#D8D8D8] text-[#242424] rounded-sm py-1 px-2 ">{children}</div>
 }
 
 export default Hero

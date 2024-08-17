@@ -5,3 +5,11 @@ declare type StickyTextProps = {
     buttontext: string,
     url: string
 }
+
+declare type ScrollCardProps = {
+    topic: string,
+    title: string,
+    description: string,
+    arr: string[],
+    img: string
+}

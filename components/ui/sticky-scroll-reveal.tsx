@@ -4,7 +4,7 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-export const StickyScroll = ({
+export const StickyScrolling = ({
   content,
   contentClassName,
 }: {
@@ -30,6 +30,7 @@ export const StickyScroll = ({
     const closestBreakpointIndex = cardsBreakpoints.reduce(
       (acc, breakpoint, index) => {
         const distance = Math.abs(latest - breakpoint);
+        console.log(distance)
         if (distance < Math.abs(latest - cardsBreakpoints[acc])) {
           return index;
         }
@@ -40,10 +41,11 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
+
   const backgroundColors = [
-    "var(--slate-900)",
-    "var(--black)",
-    "var(--neutral-900)",
+    "#191919",
+    "bg-[#191919]",
+    "bg-[#191919]",
   ];
   const linearGradients = [
     "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
@@ -57,26 +59,27 @@ export const StickyScroll = ({
 
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
+    console.log(activeCard)
   }, [activeCard]);
 
   return (
-    <motion.div
+      <motion.div
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
+      className="h-[100vh] overflow-y-auto example flex justify-center sticky space-x-10 rounded-md p-10"
       ref={ref}
     >
       <div className="div relative flex items-start px-4">
         <div className="max-w-2xl">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-20">
+            <div key={item.title + index} className="my-20 sticky top-[35%] w-full h-full">
               <motion.h2
                 initial={{
                   opacity: 0,
                 }}
                 animate={{
-                  opacity: activeCard === index ? 1 : 0.3,
+                  opacity: activeCard === index ? 1 : 0,
                 }}
                 className="text-2xl font-bold text-slate-100"
               >
@@ -87,7 +90,7 @@ export const StickyScroll = ({
                   opacity: 0,
                 }}
                 animate={{
-                  opacity: activeCard === index ? 1 : 0.3,
+                  opacity: activeCard === index ? 1 : 0,
                 }}
                 className="text-kg text-slate-300 max-w-sm mt-10"
               >
