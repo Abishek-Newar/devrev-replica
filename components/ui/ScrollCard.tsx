@@ -15,7 +15,7 @@ const ScrollCard = ({item}: {item:ScrollCardProps}) => {
                     <div>
                         {
                             item.arr.map((element, index) => (
-                                <div className='flex gap-2 text-lg '>
+                                <div key={index} className='flex gap-2 text-lg '>
                                     <Image
                                         src={`${logos[index]}`}
                                         alt="first point"

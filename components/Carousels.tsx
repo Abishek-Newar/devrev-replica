@@ -22,7 +22,7 @@ const Carousels = () => {
     <Carousel >
           
           {slides.map((item,index)=>(
-            <CarouselItem >
+            <CarouselItem key={index} >
             <div className='w-[600px] border flex flex-col justify-between items-center p-2'>
               <h1 className='w-[600px]'>{item.quote}</h1>
               <div>

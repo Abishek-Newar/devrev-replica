@@ -42,6 +42,7 @@ const Infinitescroller = () => {
         {
             [...images,...images].map((item,index)=>(
                 <Image
+                key={index}
                 src={item}
                 alt="brand image"
                 width={130}
