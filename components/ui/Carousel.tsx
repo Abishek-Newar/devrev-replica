@@ -30,13 +30,13 @@ const Carousel = ({ children }: {children:React.ReactNode}) => {
     };
   }, [activeIndex]);
 
-  const onTouchStart = (e) => {
+  const onTouchStart = (e:any) => {
     const touch = e.touches[0];
     swipe.current = { x: touch.clientX };
     console.log("TOUCH >>>> START");
   };
 
-  const onTouchMove = (e) => {
+  const onTouchMove = (e:any) => {
     if (e.changedTouches && e.changedTouches.length) {
       //@ts-ignore
       swipe.current.swiping = true;
@@ -44,11 +44,15 @@ const Carousel = ({ children }: {children:React.ReactNode}) => {
     console.log("TOUCH >>>> MOVE");
   };
 
-  const onTouchEnd = (e) => {
+  const onTouchEnd = (e:any) => {
     const touch = e.changedTouches[0];
-    const swipedLeft = touch.clientX - swipe.current.x > 0 ? true : false;
-    const swipedRight = touch.clientX - swipe.current.x > 0 ? false : true;
-    const absX = Math.abs(touch.clientX - swipe.current.x);
+    //@ts-ignore
+    const swipedLeft = touch.clientX - swipe.current?.x > 0 ? true : false;
+    //@ts-ignore
+    const swipedRight = touch.clientX - swipe.current?.x > 0 ? false : true;
+    //@ts-ignore
+    const absX = Math.abs(touch.clientX - swipe.current?.x);
+    //@ts-ignore
     if (swipe.current.swiping && absX > 50) {
       if (swipedLeft) {
         updateIndex(activeIndex - 1);
@@ -72,6 +76,7 @@ const Carousel = ({ children }: {children:React.ReactNode}) => {
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
         {React.Children.map(children, (child) => {
+          //@ts-ignore
           return React.cloneElement(child, { width: "100%" });
         })}
       </div>
