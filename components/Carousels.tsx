@@ -23,8 +23,8 @@ const Carousels = () => {
           
           {slides.map((item,index)=>(
             <CarouselItem key={index} >
-            <div className='w-[600px] border flex flex-col justify-between items-center p-2'>
-              <h1 className='w-[600px]'>{item.quote}</h1>
+            <div className='w-[600px] border flex flex-col justify-between items-center p-2 overflow-hidden'>
+              <h1 className='w- text-center text-3xl font-roboto'>{item.quote}</h1>
               <div>
                 <p>{item.author}</p>
                 <p>{item.position}</p>

@@ -9,7 +9,7 @@ import { StickyScrolls } from "@/components/StickyScrolls";
 
 export default function Home() {
   return (
-    <main >
+    <main className="w-[100vw] overflow-hidden" >
       <Navbar />
       <Hero />
       <StickyScrolls />
