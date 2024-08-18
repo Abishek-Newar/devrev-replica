@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react";
-export const CarouselItem = ({ children}) => {
+export const CarouselItem = ({ children}: {children:React.ReactNode}) => {
   return (
     <div className="inline-flex items-center justify-center h-[200px]" style={{ width: "100%" }}>
       {children}
@@ -8,7 +8,7 @@ export const CarouselItem = ({ children}) => {
   );
 };
 
-const Carousel = ({ children }) => {
+const Carousel = ({ children }: {children:React.ReactNode}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swipe = useRef({});
 
@@ -38,6 +38,7 @@ const Carousel = ({ children }) => {
 
   const onTouchMove = (e) => {
     if (e.changedTouches && e.changedTouches.length) {
+      //@ts-ignore
       swipe.current.swiping = true;
     }
     console.log("TOUCH >>>> MOVE");
