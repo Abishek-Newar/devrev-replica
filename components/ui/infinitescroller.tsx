@@ -26,7 +26,7 @@ const Infinitescroller = () => {
         
         controls = animate(xTransition, [0,finalPosition],{
             ease: 'linear',
-            duration: 25,
+            duration: 16,
             repeat: Infinity,
             repeatType: 'loop',
             repeatDelay: 0,
@@ -44,9 +44,9 @@ const Infinitescroller = () => {
                 <Image
                 src={item}
                 alt="brand image"
-                width={140}
+                width={130}
                 height={0}
-                
+                className=' grayscale'
                  />
 
             ))

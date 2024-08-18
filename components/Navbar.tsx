@@ -22,6 +22,7 @@ import {
 import { Icons } from "./icons"
 import { Button } from "./ui/button"
 import Image from "next/image"
+import { useEffect } from "react"
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -61,18 +62,42 @@ const components: { title: string; href: string; description: string }[] = [
     },
 ]
 
+
+
 export function Navbar() {
+    useEffect(() => {
+        let lastScrollTop = 0;
+        const navbar = document.getElementById("navbar");
+
+        const handleScroll = () => {
+            let scrollTop = window.scrollY || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                navbar?.classList.add("active");
+            } else {
+                navbar?.classList.remove("active");
+            }
+            lastScrollTop = scrollTop;
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <div className="flex justify-around items-center py-2 bg-transparent ">
-            <div>
-                <Image
-                src="/logo.png"
-                alt="logo" 
-                width={100}
-                height={20}                />
-            </div>
-            <div className="flex">
-                {/* <NavigationMenu>
+        <div id="navbar" className="fixed top-0 w-[100vw] bg-white transition-all ease-linear duration-500 z-50">
+            <div className="flex justify-around items-center py-2 bg-transparent ">
+                <div>
+                    <Image
+                        src="/logo.png"
+                        alt="logo"
+                        width={100}
+                        height={20} />
+                </div>
+                <div className="flex">
+                    {/* <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
@@ -132,92 +157,93 @@ export function Navbar() {
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu> */}
-                <NavigationMenu>
-                
-                    <HoverCard>
-                        
-                        <HoverCardTrigger>
-                            <GhostButton>
-                                Product
-                            </GhostButton>
-                        </HoverCardTrigger>
-                        
-                        <HoverCardContent>
+                    <NavigationMenu>
 
-                        </HoverCardContent>
-                    </HoverCard>
-                    
-                    <HoverCard>
-                        <HoverCardTrigger>
-                            <GhostButton>
-                                Platform
-                            </GhostButton>
-                        </HoverCardTrigger>
-                        <HoverCardContent>
+                        <HoverCard>
 
-                        </HoverCardContent>
-                    </HoverCard>
-                    
-                    <HoverCard>
-                        <HoverCardTrigger>
-                            <GhostButton>
-                                Solutions
-                            </GhostButton>
-                        </HoverCardTrigger>
-                        <HoverCardContent>
+                            <HoverCardTrigger>
+                                <GhostButton>
+                                    Product
+                                </GhostButton>
+                            </HoverCardTrigger>
 
-                        </HoverCardContent>
-                    </HoverCard>
-                    
-                    <HoverCard>
-                        <HoverCardTrigger>
-                            <GhostButton>
-                                MarketPlace
-                            </GhostButton>
-                        </HoverCardTrigger>
-                        <HoverCardContent>
+                            <HoverCardContent>
 
-                        </HoverCardContent>
-                    </HoverCard>
-                    
-                    <HoverCard>
-                        <HoverCardTrigger>
-                            <GhostButton>
-                                Company
-                            </GhostButton>
-                        </HoverCardTrigger>
-                        <HoverCardContent>
+                            </HoverCardContent>
+                        </HoverCard>
 
-                        </HoverCardContent>
-                    </HoverCard>
-                    
-                    <HoverCard>
-                        <HoverCardTrigger>
-                            <GhostButton>
-                                Resources
-                            </GhostButton>
-                        </HoverCardTrigger>
-                        <HoverCardContent>
+                        <HoverCard>
+                            <HoverCardTrigger>
+                                <GhostButton>
+                                    Platform
+                                </GhostButton>
+                            </HoverCardTrigger>
+                            <HoverCardContent>
 
-                        </HoverCardContent>
-                    </HoverCard>
-                    
-                    <HoverCard>
-                        <HoverCardTrigger>
-                            <GhostButton>
-                                Pricing
-                            </GhostButton>
-                        </HoverCardTrigger>
-                        <HoverCardContent>
+                            </HoverCardContent>
+                        </HoverCard>
 
-                        </HoverCardContent>
-                    </HoverCard>
-                    
-                </NavigationMenu>
-            </div>
-            <div className="flex gap-2">
-                <Button variant="outline" size="sm">Login</Button>
-                <Button variant="custom" size="sm">Book a demo</Button>
+                        <HoverCard>
+                            <HoverCardTrigger>
+                                <GhostButton>
+                                    Solutions
+                                </GhostButton>
+                            </HoverCardTrigger>
+                            <HoverCardContent>
+
+                            </HoverCardContent>
+                        </HoverCard>
+
+                        <HoverCard>
+                            <HoverCardTrigger>
+                                <GhostButton>
+                                    MarketPlace
+                                </GhostButton>
+                            </HoverCardTrigger>
+                            <HoverCardContent>
+
+                            </HoverCardContent>
+                        </HoverCard>
+
+                        <HoverCard>
+                            <HoverCardTrigger>
+                                <GhostButton>
+                                    Company
+                                </GhostButton>
+                            </HoverCardTrigger>
+                            <HoverCardContent>
+
+                            </HoverCardContent>
+                        </HoverCard>
+
+                        <HoverCard>
+                            <HoverCardTrigger>
+                                <GhostButton>
+                                    Resources
+                                </GhostButton>
+                            </HoverCardTrigger>
+                            <HoverCardContent>
+
+                            </HoverCardContent>
+                        </HoverCard>
+
+                        <HoverCard>
+                            <HoverCardTrigger>
+                                <GhostButton>
+                                    Pricing
+                                </GhostButton>
+                            </HoverCardTrigger>
+                            <HoverCardContent>
+
+                            </HoverCardContent>
+                        </HoverCard>
+
+                    </NavigationMenu>
+                </div>
+                <div className="flex gap-2">
+                    <Button variant="outline" size="sm">Login</Button>
+                    <Button variant="custom" size="sm">Book a demo</Button>
+                </div>
             </div>
         </div>
     )
@@ -250,8 +276,8 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem"
 
 
-const GhostButton = ({children}: {children: string})=>{
+const GhostButton = ({ children }: { children: string }) => {
     return <Button variant="ghost" size="custom" className="text-xs text-[#7A7A7A]">
-    {children}
-</Button>
+        {children}
+    </Button>
 }

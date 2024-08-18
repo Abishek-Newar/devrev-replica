@@ -61,13 +61,13 @@ const Carousel = ({ children }) => {
 
   return (
     <div
-      className="overflow-hidden "
+      className="overflow-hidden  "
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
       <div
-        className=" whitespace-nowrap transition-transform 0.3s"
+        className=" whitespace-nowrap transition-transform 0.3s "
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
         {React.Children.map(children, (child) => {

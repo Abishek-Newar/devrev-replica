@@ -33,30 +33,30 @@ const Experiences = () => {
         image: "https://devrev.ai/_next/image?url=%2Fimages%2Fv3%2Fhome%2Fgrid-consumer.webp&w=750&q=75"
     }]
   return (
-    <div className='flex justify-center items-center flex-col bg-custom gap-10 text-white '>
+    <div className='flex justify-center items-center flex-col  gap-6 text-white py-10 '>
         <TitleText>Experiences</TitleText>
         <div className='text-3xl font-roboto font-medium'>
-        <h1 className='font-roboto'>Love the tool you use</h1>
+        <h1 className='font-roboto text-black'>Love the tool you use</h1>
         <h1 className='text-textclr font-roboto'>Fast, intuitive, social</h1>
         </div>
         <Button variant="custom">Sign up <Icons.arrowright></Icons.arrowright></Button>
         <div className='flex flex-col gap-1 w-[76%]'>
-        <div className=' h-[80vh] p-10' style={{background: "url(https://devrev.ai/_next/image?url=%2Fimages%2Fv3%2Fhome%2Fbg-1.webp&w=750&q=75)",backgroundSize:"cover"}}>
+        <div className=' h-[90vh] p-10' style={{background: "url(https://devrev.ai/_next/image?url=%2Fimages%2Fv3%2Fhome%2Fbg-1.webp&w=750&q=75)",backgroundSize:"cover"}}>
         <ExperienceContainer text1={experiencetext1.text1} text2={experiencetext1.text2}  />
         </div >
-        <div className='flex gap-1  h-[80vh] '>
+        <div className='flex gap-1  h-[90vh] '>
             {
                 experiencetext2.map((item,index)=>(
-                    <div key={index} className='w-[50%] h-[80%] p-10' style={{background: `url(${item.image})`,backgroundSize:"cover"}}>
+                    <div key={index} className='w-[50%] h-[90vh] p-10' style={{background: `url(${item.image})`,backgroundSize:"cover"}}>
                         <ExperienceContainer text1={item.text1} text2={item.text2} />
                     </div>
                 ))
             }
         </div>
-        <div className='flex flex-wrap'>
+        <div className='flex flex-wrap w-[100vw] mt-16'>
             {
                 experienceBox.map((item,index) =>(
-                    <div className={`w-[300px] gap-4 mt-3  h-[32vh] ${index !== 0 ? " border-l-2": null}`}>
+                    <div key={index} className={`w-[330px] gap-4 mt-3  h-[32vh] ${index !== 0 ? " border-l-[1px]": null}`}>
                         <ExperienceBox topic={item.topic} percentage={item.percentage} />
                     </div>
                 ))
@@ -77,8 +77,8 @@ const ExperienceContainer = ({text1,text2}:{text1: string, text2: string}) =>{
 }
 
 const ExperienceBox = ({topic,percentage} :{topic: string,percentage: string}) =>{
-    return <div className='text-black font-roboto flex flex-col  justify-between h-full' >
-        <h1 className='text-2xl'>{topic}</h1>
+    return <div className='text-black px-3  flex flex-col  justify-between h-full' >
+        <h1 className='text-lg font-semibold'>{topic}</h1>
         <h1 className='text-6xl font-medium'>{percentage}</h1>
     </div>
 }

@@ -28,7 +28,7 @@ const Features = () => {
         <div>
         {
             featuresDetails.map((item,index)=>(
-                <StickyText
+                <StickyText key={index}
                 title={item.title}
                 header={item.header}
                 text={item.text}
@@ -45,7 +45,7 @@ const Features = () => {
             <Button variant="custom" size="sm"><p>Sign up</p></Button>
             </div>
     </div>
-    <div className="h-[45vh] lg:px-[15%] border-t flex border-b bg-black">
+    <div className="h-[45vh] lg:px-[15%] border-t flex  bg-black" style={{borderTop:"1px solid #ffffff26"}}>
         <div className="bg-black w-full h-full border lg:border-0 p-24" >
             <div>
                 <div>

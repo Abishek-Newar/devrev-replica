@@ -11,7 +11,7 @@ const Footer = () => {
     const legal:string[] = ["Security","Privacy Policy","Cookie Policy","Subprocessors","Terms of Services"]
   return (
     <div className='bg-black'>
-        <div className='h-[22vh] py-6 pl-44'>
+        <div className='h-[22vh] py-6 pl-44' style={{borderTop:"1px solid #ffffff26"}}>
             <div>
                 <p className='text-white'>SOC2 compliant</p>
                 <p className='text-[#CECDC9]'>Enterprise grade security to protect customer data</p>
@@ -24,8 +24,9 @@ const Footer = () => {
             height={80}
             />
         </div>
-        <div className='h-[60vh] text-white bg-black border-t-[1px] border-[#CECDC9]'>
-            <div className='flex h-full justify-around pt-24'>
+        <div className='h-[60vh] text-white bg-black '>
+            
+            <div className='flex h-full justify-around pt-24' style={{borderTop:"1px solid #ffffff26"}}>
             <div>
                 <CustomPTag topic="Product" />
                 <CustomList list={product} />
