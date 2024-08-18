@@ -12,7 +12,7 @@ const Carousel = ({ children }: {children:React.ReactNode}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swipe = useRef({});
 
-  const updateIndex = (newIndex) => {
+  const updateIndex = (newIndex:any) => {
     if (newIndex >= React.Children.count(children) || newIndex < 0) {
       newIndex = 0;
     }
